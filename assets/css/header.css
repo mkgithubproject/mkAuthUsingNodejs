@@ -1,0 +1,22 @@
+body {font-family: Arial, Helvetica, sans-serif;
+margin: 0px;}
+* {box-sizing: border-box}
+#navHeader ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: #333;
+}
+#navHeader ul li {
+     display: inline;
+    /* Or you can use float: left; */
+}
+#navHeader ul li a{
+    display: inline-block;
+    color: white;
+    padding: 14px 8px;
+}
+.rightFloat{
+    float: right;
+}
+

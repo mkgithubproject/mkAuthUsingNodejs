@@ -1,0 +1,53 @@
+#singUpForm{
+    width: 30%;
+   margin: auto;
+   margin-top:5px;
+   
+}
+input[type=text],
+input[type=password]{
+    display: block;
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    background: #f1f1f1;
+    box-sizing: border-box;
+}
+#singUpForm label{
+    display: block;
+
+}
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+}
+#socialSignUp {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    padding: 15px;
+    background-color:red;
+    opacity: .8;
+    font-size: medium;
+}
+#socialSignUp a{
+    color:white;
+}
+#socialSignUp:hover{
+    opacity: 1;
+}
+input[type=submit]{
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 12px;
+    background-color: blue;
+    color: white;
+    font-size: medium;
+    opacity: 0.8;
+}
+input[type=submit]:hover{
+    opacity: 1;
+}
+

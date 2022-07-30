@@ -1,0 +1,11 @@
+#footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding:1px;
+    background-color:#666 ;
+}
+.mainWrapper{
+    position: relative;
+    min-height:120vh;
+}

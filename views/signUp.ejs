@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/signUp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css" integrity="sha512-NXUhxhkDgZYOMjaIgd89zF2w51Mub53Ru3zCNp5LTlEzMbNNAjTjDbpURYGS5Mop2cU4b7re1nOIucsVlrx9fA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>
+        <%=locals.title %>
+    </title>
+</head>
+
+<body>
+    <div class="mainWrapper">
+        <%- include('header'); -%>
+            <div id="singUpForm">
+                <button id="socialSignUp"><a href="/users/auth/google">Sign Up/Sign In With Google</a></button>
+                <p style="text-align: center;font-weight: bold;">OR</p>
+                <form action="/users/create" method="post">
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <label for="psw-repeat"><b>Repeat Password</b></label>
+                    <input type="password" placeholder="Repeat Password" name="psw_repeat" required>
+                    <!-- div to show reCAPTCHA -->
+                    <div class="g-recaptcha" data-sitekey="<%=locals.captcha_siteKey %>"></div>
+                    <p>Already have an account?<a href="/users/sign-in">Sign In</a></p>
+                    <input type="submit" value="Sign Up">
+                </form>
+            </div>
+            
+            <%- include('footer'); -%>
+            
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js" integrity="sha512-lOrm9FgT1LKOJRUXF3tp6QaMorJftUjowOWiDcG5GFZ/q7ukof19V0HKx/GWzXCdt9zYju3/KhBNdCLzK8b90Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <% if(flash.success && flash.success.length>0){ %>
+        <script>
+            new Noty({
+                theme: 'relax',
+                text: "<%= flash.success %>",
+                type: 'success',
+                layout: 'topRight',
+                timeout: 1500
+        }).show();
+        </script>
+    <%} %>
+    <% if(flash.error && flash.error.length>0){ %>
+        <script>
+            new Noty({
+                theme: 'relax',
+                text: "<%= flash.error %>",
+                type: 'error',
+                layout: 'topRight',
+                timeout: 1500
+        }).show();
+        </script>
+    <%} %>
+</body>
+
+</html>
