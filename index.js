@@ -37,7 +37,7 @@ app.listen(process.env.port || port,(err)=>{
         console.log(`Error in running the server: ${err}`);
         return;
     }
-    console.log(`Server is running on port ${port}`);
+    console.log(`Server is running on port ${process.env.port}`);
 });
 // use express router
 
