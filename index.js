@@ -32,7 +32,7 @@ app.use(flash());
 app.use(customSetFlashMWare.setFlash);
 app.use('/', require('./routes'));
 app.use(express.static('assets'));
-app.listen(port,(err)=>{
+app.listen(process.env.port || port,(err)=>{
     if(err){
         console.log(`Error in running the server: ${err}`);
         return;
